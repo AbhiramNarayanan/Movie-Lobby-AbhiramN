@@ -83,13 +83,17 @@ To test the APIs, we'll be using Postman. Below are the steps to test various AP
 
 
 Now its time to check other methods post , put and delete. To work in that you need to become an admin, By default when you register you are a user so you need to upgrade to admin, but before that we can check that as a user. so select post method give 
-``  URL : localhost:5555/movies `` if you check that, you will get `` {
+``  URL : localhost:5555/movies `` 
+if you check that, you will get 
+`` {
     "message": "Unauthorized"
-} `` In the header you need to add the jwt token we copied early. so to add that give **key : Authorization and value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFiaGlyYW0gTiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzEwMDM5OTU4LCJleHAiOjE3MTAwNDM1NTh9.wHuEfetq0vkbz60rr3UJdYnYgG-DTTcUuRIN_2SRncM** (Bearer followed by one space after that paste the token we copied early.) tick that and click send Now you will get msg ``  {
+} `` 
+In the header you need to add the jwt token we copied early. so to add that give **key : Authorization and value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFiaGlyYW0gTiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzEwMDM5OTU4LCJleHAiOjE3MTAwNDM1NTh9.wHuEfetq0vkbz60rr3UJdYnYgG-DTTcUuRIN_2SRncM** (Bearer followed by one space after that paste the token we copied early.) tick that and click send Now you will get msg ``  {
     "message": "Invalid token"
 }  `` at terminal. Because it's only authorized for admin , by default we are users .. likewise if you test put and delete method with same jwt token and adding an id in the URL we get the same msg because to access those we need to become an admin..
 
-#To add an admin using MongoDB Compass (Because By default you are only a user), follow these steps:
+
+**# To add an admin using MongoDB Compass (Because By default you are only a user), follow these steps:**
 
 1. **Open MongoDB Compass**: Launch MongoDB Compass on your system.
 
